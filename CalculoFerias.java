@@ -62,6 +62,16 @@ public class CalculoFerias {
     page.calcular();
     assertEquals("R$ 2.115,55", page.getValorCalculado());
   }
+  
+  @Test
+  public void testMinimoDiasFerias() throws Exception {
+    page.setSalario("1.800,00");
+    page.setNumeroDependentes("0");
+    page.setDiasFerias("10");
+    page.setOpcaoVenderFerias(false);
+    page.calcular();
+    assertEquals("R$ 736,00", page.getValorCalculado());
+  }
 
   @After
   public void tearDown() throws Exception {
